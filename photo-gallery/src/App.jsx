@@ -11,24 +11,33 @@ function App() {
   const [search, setSearch] = useState('');
   const [selectedAlbum, setSelectedAlbum] = useState('all');
 
-  // Fetch first 100 photos
   useEffect(() => {
-    const fetchPhotos = async () => {
-      try {
-        setLoading(true);
-        const res = await fetch('https://jsonplaceholder.typicode.com/photos');
-        if (!res.ok) throw new Error('Failed to fetch photos');
-        const data = await res.json();
-        setPhotos(data.slice(0, 100));
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchPhotos();
-  }, []);
+  const fetchPhotos = async () => {
+    try {
+      console.log('🟡 Fetch starting...');
+      setLoading(true);
+      
+      const res = await fetch('https://jsonplaceholder.typicode.com/photos');
+      console.log('🟢 Response received:', res.status, res.ok);
+      
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      
+      const data = await res.json();
+      console.log('📦 Data received, length:', data.length);
+      
+      setPhotos(data.slice(0, 100));
+      console.log('✅ Photos state updated');
+      setError(null);
+    } catch (err) {
+      console.error('❌ Fetch error:', err);
+      setError(err.message);
+    } finally {
+      console.log('🏁 Loading finished');
+      setLoading(false);
+    }
+  };
+  fetchPhotos();
+}, []);
 
   // Apply dark mode class to <html>
   useEffect(() => {
