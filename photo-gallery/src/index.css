@@ -5,9 +5,14 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem; /* Navbar height for anchor offset */
   }
   body {
-    @apply bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300;
+    @apply bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 
+           transition-colors duration-300;
+  }
+  ::selection {
+    @apply bg-indigo-500 text-white;
   }
 }
 
