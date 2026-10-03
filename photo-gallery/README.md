@@ -1,16 +1,54 @@
-# React + Vite
+# 📸 Photo Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive photo gallery built with **React + Vite** and **Tailwind CSS**.  
+Fetches 100 photos from [JSONPlaceholder](https://jsonplaceholder.typicode.com/photos) and offers search, album filtering, dark mode, and a details modal.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🖼️ Fetches and displays first **100 photos** via native `fetch()` API
+- 🔍 **Search** photos by title
+- 📁 **Filter** photos by album
+- 🌙 **Dark Mode** with persistent class strategy
+- 👁️ **View Details** modal (ESC to close)
+- 📱 Fully **responsive** grid layout
+- ⚡ Lazy-loaded images with smooth animations
+- 🎨 Gradient navbar, hero header, and multi-column footer
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+| Tech | Purpose |
+|------|---------|
+| **React 18** | UI library |
+| **Vite** | Build tool & dev server |
+| **Tailwind CSS 3** | Styling |
+| **Fetch API** | Data fetching (no Axios) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js `>= 18`
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/photo-gallery.git
+cd photo-gallery
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
